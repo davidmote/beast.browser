@@ -23,6 +23,8 @@ from z3c.form.widget import Widget
 
 from five import grok
 
+from beast.browser import MessageFactory as _
+
 def PolarFieldWidget(field, request):
     """Used by z3c.form"""
 
@@ -121,7 +123,7 @@ class TimeWidget(widget.HTMLTextInputWidget, Widget):
     """ Custom time widget """
     grok.implementsOnly(ITimeWidget)
 
-    klass = u'avrc-aeh-browser-time-widget'
+    klass = u'beast-browser-time-widget'
     value = u''
     size = 4
 

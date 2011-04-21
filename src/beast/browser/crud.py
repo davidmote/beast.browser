@@ -8,7 +8,7 @@ from plone.z3cform.layout import FormWrapper
 from plone.z3cform.widget import singlecheckboxwidget_factory
 from plone.z3cform.crud import crud
 
-from avrc.aeh import MessageFactory as _
+from beast.browser import MessageFactory as _
 
 class NestedFormView(FormWrapper):
     """
