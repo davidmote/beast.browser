@@ -107,7 +107,7 @@ def AmountFieldWidget(field, request):
         the storage location (freezer/rack/box) of an aliquot or specimen.
     """
     widget = TextFieldWidget(field, request)
-    widget.size = 10
+    widget.size = 3
     return widget
 
 # ------------------------------------------------------------------------------
