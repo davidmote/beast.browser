@@ -50,7 +50,7 @@ class BatchNavigation(crud.BatchNavigation):
         if batch.total == 1:
             return u""
         else:
-            for i in f_n_l(range(batch.total), batch.index, 2,2):
+            for i in f_n_l(range(batch.total), batch.index, 5, 5):
                 if i is None:
                     pages.append(dict(label=unicode('...'), link=None))
                 elif i == batch.index:
