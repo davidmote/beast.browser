@@ -3,6 +3,7 @@ from zope.app.pagetemplate import viewpagetemplatefile
 
 from z3c.form import field
 from z3c.form.interfaces import INPUT_MODE
+from z3c.batching import batch
 
 from plone.z3cform.layout import FormWrapper
 from plone.z3cform.widget import singlecheckboxwidget_factory
@@ -36,6 +37,27 @@ class wrappableAddForm(crud.AddForm):
     template = viewpagetemplatefile.ViewPageTemplateFile('templates/crud-add.pt')
 
 
-
+from z3c.batching.batch import first_neighbours_last as f_n_l
 class BatchNavigation(crud.BatchNavigation):
     template = viewpagetemplatefile.ViewPageTemplateFile('templates/batch.pt')
+    
+    def __call__(self):
+        pages = []
+        batch = self.context
+        number_pages = batch.total
+        
+        
+        if batch.total == 1:
+            return u""
+        else:
+            for i in f_n_l(range(batch.total), batch.number-1, 2,2):
+                if i is None:
+                    pages.append(dict(label=unicode('...'), link=None))
+                elif i == batch.number-1:
+                    pages.append(dict(label=unicode(i+1), link=link))
+                else:
+                    link = self.make_link(page=i)           
+                    pages.append(dict(label=unicode(i+1), link=link))
+
+            return self.template(batch=batch, pages=pages)
+
