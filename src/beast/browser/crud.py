@@ -47,7 +47,7 @@ class BatchNavigation(crud.BatchNavigation):
         number_pages = batch.total
         
         
-        if batch.total == 1:
+        if batch.total <= 1:
             return u""
         else:
             for i in f_n_l(range(batch.total), batch.index, 5, 5):
