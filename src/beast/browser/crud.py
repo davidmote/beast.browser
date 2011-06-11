@@ -46,7 +46,6 @@ class BatchNavigation(crud.BatchNavigation):
         batch = self.context
         number_pages = batch.total
         
-        
         if batch.total <= 1:
             return u""
         else:
