@@ -5,6 +5,7 @@
     xmlns:grok="http://namespaces.zope.org/grok"
     i18n_domain="beast.browser">
 
+  <includeDependencies package="." />
   <grok:grok package="." />
 
   <!-- -*- extra stuff goes here -*- -->
