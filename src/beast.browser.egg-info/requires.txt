@@ -1,3 +1,0 @@
-setuptools
-z3c.form
-plone.z3cform

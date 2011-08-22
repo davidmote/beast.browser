@@ -26,13 +26,11 @@ setup(name='beast.browser',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'z3c.form',
+          'five.grok',
           'plone.z3cform',
-          # -*- Extra requirements: -*-
+          'z3c.form',
       ],
       entry_points="""
-      # -*- Entry points: -*-
-
       [z3c.autoinclude.plugin]
       target = plone
       """,
