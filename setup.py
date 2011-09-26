@@ -30,6 +30,9 @@ setup(name='beast.browser',
           'plone.z3cform',
           'z3c.form',
       ],
+    extras_require=dict(
+        test=['plone.app.testing'],
+        ),
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone

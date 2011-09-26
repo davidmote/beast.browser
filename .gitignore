@@ -18,4 +18,10 @@ downloads
 lib
 build
 dist
+htmlcov
+coverage.xml
+.mr.developer.cfg
+.installed.cfg
 
+# legacy junk
+.svn
