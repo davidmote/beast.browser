@@ -1,9 +1,5 @@
 # GIT Ignore Files
 # Portions of this file were borrowed from:
-# * http://help.github.com/ignore-files/
-# * https://github.com/github/gitignore/
-# GIT Ignore Files
-# Portions of this file were borrowed from:
 #   * http://help.github.com/ignore-files/
 #   * https://github.com/github/gitignore/
 ###############################################################################
@@ -95,3 +91,4 @@ pip-log.txt
 
 ##### Installer Logs
 pip-log.txt
+
