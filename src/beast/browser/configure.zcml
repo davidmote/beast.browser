@@ -6,6 +6,8 @@
     i18n_domain="beast.browser">
 
   <includeDependencies package="." />
+  <include package="five.grok" />
+
   <grok:grok package="." />
 
   <!-- -*- extra stuff goes here -*- -->

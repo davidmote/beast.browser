@@ -1,55 +1,13 @@
-import unittest
+import unittest2 as unittest
+from beast.browser.testing import BEAST_BROWSER_INTEGRATION_TESTING
+from plone.app.testing import applyProfile
 
-#from zope.testing import doctestunit
-#from zope.component import testing
-from Testing import ZopeTestCase as ztc
-
-from Products.Five import fiveconfigure
-from Products.PloneTestCase import PloneTestCase as ptc
-from Products.PloneTestCase.layer import PloneSite
-ptc.setupPloneSite()
-
-import beast.browser
+from Products.CMFCore.utils import getToolByName
 
 
-class TestCase(ptc.PloneTestCase):
+class TestSetup(unittest.TestCase):
 
-    class layer(PloneSite):
+    layer = BEAST_BROWSER_INTEGRATION_TESTING
 
-        @classmethod
-        def setUp(cls):
-            fiveconfigure.debug_mode = True
-            ztc.installPackage(beast.browser)
-            fiveconfigure.debug_mode = False
-
-        @classmethod
-        def tearDown(cls):
-            pass
-
-
-def test_suite():
-    return unittest.TestSuite([
-
-        # Unit tests
-        #doctestunit.DocFileSuite(
-        #    'README.txt', package='beast.browser',
-        #    setUp=testing.setUp, tearDown=testing.tearDown),
-
-        #doctestunit.DocTestSuite(
-        #    module='beast.browser.mymodule',
-        #    setUp=testing.setUp, tearDown=testing.tearDown),
-
-
-        # Integration tests that use PloneTestCase
-        #ztc.ZopeDocFileSuite(
-        #    'README.txt', package='beast.browser',
-        #    test_class=TestCase),
-
-        #ztc.FunctionalDocFileSuite(
-        #    'browser.txt', package='beast.browser',
-        #    test_class=TestCase),
-
-        ])
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
+    def test_should_fail(self):
+        self.fail('Tests not implemented yet.')
